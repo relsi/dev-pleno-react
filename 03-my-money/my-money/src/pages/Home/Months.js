@@ -1,5 +1,6 @@
 import React from 'react';
-import Rest from './rest';
+import { Link } from 'react-router-dom';
+import Rest from '../../utils/rest';
 
 const baseURL = 'https://mymoney-curso-react.firebaseio.com/';
 const { useGet } = Rest(baseURL);
@@ -32,7 +33,7 @@ const Months = () => {
                 .map( (mes) => {
                   return (
                       <tr key={mes}>
-                        <td>{mes}</td>
+                        <td><Link to={`/records/${mes}`}>{mes}</Link></td>
                         <td>{data.data[mes].previsao_entrada}</td>
                         <td>{data.data[mes].entradas}</td>
                         <td>{data.data[mes].previsao_saida}</td>

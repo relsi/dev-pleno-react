@@ -5,7 +5,6 @@ import Rest from '../../utils/rest';
 const baseURL = 'https://mymoney-curso-react.firebaseio.com/';
 const { useGet } = Rest(baseURL);
 
-
 const Months = () => {
     const data = useGet('meses');
 
